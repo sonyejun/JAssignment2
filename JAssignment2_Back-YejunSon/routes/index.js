@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET recipes api */
-router.get('/api/recipe', async function(req, res, next) {
+router.get('/api/recipes', async function(req, res, next) {
   let recipes = await getRecipes();
   res.json(recipes);
 });
@@ -24,6 +24,12 @@ router.get('/api/recipe', async function(req, res, next) {
 router.get('/api/recipe/:recipeId', async function(req, res, next) {
   let recipe = await getRecipe(req.params.recipeId);
   res.json(recipe);
+});
+
+/* GET latest recipes api */
+router.get("/api/latestrecipes", async (req, res) => {
+  let recipes = await getLatestRecipes();
+  res.json(recipes);
 });
 
 /* GET Books api */
@@ -37,6 +43,15 @@ router.get('/api/book/:bookId', async function(req, res, next) {
   let book = await getBook(req.params.bookId);
   res.json(book);
 });
+
+/* GET latest books api */
+router.get("/api/latestbooks", async (req, res) => {
+  let recipes = await getLatestBooks();
+  res.json(recipes);
+});
+
+
+
 
 //mongodb
 async function connection() {
@@ -58,6 +73,13 @@ async function getRecipe(id) {
   return result;
 }
 
+async function getLatestRecipes() {
+  db = await connection();
+  let results = db.collection("recipes").find({}).sort({_id: -1}).limit(4);
+  let res = await results.toArray();
+  return res;
+};
+
 async function getBooks() {
   db = await connection();
   let results = db.collection('books').find({});
@@ -71,5 +93,12 @@ async function getBook(id) {
   let result = db.collection('books').findOne(getSingleId);
   return result;
 }
+
+async function getLatestBooks() {
+  db = await connection();
+  let results = db.collection("books").find({}).sort({_id: -1}).limit(4);
+  let res = await results.toArray();
+  return res;
+};
 
 module.exports = router;
