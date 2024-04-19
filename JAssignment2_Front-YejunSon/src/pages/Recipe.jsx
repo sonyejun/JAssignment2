@@ -29,8 +29,7 @@ export default function Recipe() {
                 <div className="detailImg"
                     style={
                         { 
-                            // backgroundImage: `url(${recipe.thumbnail})`,
-                            backgroundColor: '#aaa',
+                            backgroundImage: `url(${recipe.thumbnail})`,
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: '50% 50%',
                             backgroundSize: 'cover'

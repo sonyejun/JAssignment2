@@ -6,7 +6,7 @@ export default function Home() {
     const sections = ['Recipes', 'Books'];
     return (
         <>
-            <Visual pageTitle={'Check out various Cooking information'} />
+            <Visual pageTitle={'Check out various Cooking information'} pageType={'main'} />
             <main id='main'>
                 {sections.map((section, index) => (
                     <section key={index}>

@@ -1,21 +1,20 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Noto+Sans:wght@300;400;500;600;700;800&display=swap');
 /* Source of Google fonts: https://fonts.googleapis.com */
 /* font-family: 'Bungee Shade', sans-serif;
 font-family: 'Noto Sans', sans-serif; */
 
 * {
-  font-family: 'Noto Sans', sans-serif; 
+  font-family: 'Noto Sans', sans-serif;
 }
 
 :root {
-  --main-color: #43C079;
+  --main-color: rgb(222, 217, 63);
   --2b-color: #2b2b2b;
   --95-color: #959595;
   --ccc-color: #ccc;
 }
 
-.btn{
+.btn {
   background: var(--2b-color);
   color: #fff;
   padding: 0.875rem 1.125rem;
@@ -33,21 +32,25 @@ header .navBar {
   border-bottom: 1px solid #cccc;
   font-size: 1.25rem;
 }
+
 header .navBar #logo {
   font-family: 'Bungee Shade';
 }
+
 header .navBar nav ul {
   display: flex;
 }
-header .navBar nav ul li + li {
+
+header .navBar nav ul li+li {
   margin-left: 20px;
 }
-header .navBar nav ul li a:hover{
+
+header .navBar nav ul li a:hover {
   color: var(--main-color);
 }
 
 /*  Image Source: website URL https://extension.usu.edu/news/nine-time-saving-cooking-tips  */
-.visual{
+.visual {
   height: 500px;
   display: flex;
   align-items: center;
@@ -56,7 +59,7 @@ header .navBar nav ul li a:hover{
   position: relative;
 }
 
-.visual .visualBg{
+.visual .visualBg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -65,7 +68,7 @@ header .navBar nav ul li a:hover{
   background: rgba(0, 0, 0, 0.5);
 }
 
-.visual .visualText{
+.visual .visualText {
   font-size: 2.5rem;
   font-family: 'Bungee Shade';
   color: var(--main-color);
@@ -74,65 +77,76 @@ header .navBar nav ul li a:hover{
   position: relative;
 }
 
+.visual.sub .visualText {
+  max-width: 450px;
+}
+
 /* Main */
-#main{
+#main {
   max-width: 1200px;
   min-height: 400px;
   margin: 0 auto;
   padding: 150px 0;
   text-align: center;
 }
-#main section + section{
+
+#main section+section {
   margin-top: 150px;
 }
-#main section h2{
+
+#main section h2 {
   font-size: 2rem;
 }
-#main section ul{
+
+#main section ul {
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   text-align: left;
 }
-#main section ul li{
+
+#main section ul li {
   width: calc((100% - 60px) / 4);
 }
-#main section ul li a{
+
+#main section ul li a {
   display: block;
   overflow: hidden;
 }
-#main section ul li a .listImg{
+
+#main section ul li a .listImg {
   display: block;
   height: 350px;
-  background: url("../images/sample.png")no-repeat 50% 0 / cover;
   transition: transform .5s ease;
+  border: 1px solid #ccc
 }
 
-#main section ul li .listTitle{
+#main section ul li .listTitle {
   font-size: 1.25rem;
   font-weight: 700;
   margin-top: 6px;
 }
 
-#main section ul li .listText{
+#main section ul li .listText {
   margin-top: 6px;
   font-size: .875rem;
   color: var(--95-color);
 }
 
-#main section .moreList{
+#main section .moreList {
   display: inline-block;
   margin-top: 40px;
 }
 
 
 /* footer */
-footer{
+footer {
   min-height: 120px;
   background: #888;
 }
-footer p{
+
+footer p {
   padding: 14px 40px;
   margin: 0 auto;
   color: #fff;
@@ -142,14 +156,77 @@ footer p{
 
 /* hover */
 @media only screen and (min-width: 1366px) {
-  .btn:hover{
+  .btn:hover {
     color: var(--main-color);
   }
+
   header .navBar #logo:hover {
     color: var(--main-color);
   }
-  
-  header .navBar #logo:active{
+
+  header .navBar #logo:active {
     transform: rotateX(45deg);
+  }
+}
+
+/* MEDIA QUERIES tablet */
+@media screen and (max-width: 1367px) {
+
+  /* header */
+  header .navBar {
+    padding: 0 20px;
+  }
+
+  #main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+
+  #main section ul li {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+/* MEDIA QUERIES mobile */
+@media screen and (max-width: 769px) {
+  html,body {
+    font-size: 14px !important;
+  }
+
+  #main section ul li {
+    width: 100%;
+  }
+
+  #main section ul li a .movieImg {
+    height: 300px;
+  }
+
+  #main section+section {
+    margin-top: 80px;
+  }
+
+  .visual .visualText {
+    text-align: center;
+  }
+
+  .visual.sub .visualText {
+    max-width: 360px;
+  }
+}
+
+/* MEDIA QUERIES mini mobile */
+@media screen and (max-width: 374px) {
+  header .navBar {
+    padding: 0 10px;
+  }
+
+  #main {
+    padding: 60px 10px;
+  }
+
+  .visual .visualText,
+  .visual.sub .visualText {
+    max-width: 330px;
   }
 }

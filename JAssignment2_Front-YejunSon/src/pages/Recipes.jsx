@@ -3,7 +3,7 @@ import Visual from "../components/Visual";
 export default function Recipes() {
     return (
         <>
-            <Visual pageTitle={'List of Recipes'} />
+            <Visual pageTitle={'List of Recipes'} pageType={'sub'} />
             <main id='main'>
                 <section>
                     <h2>Recipes</h2>

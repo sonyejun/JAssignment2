@@ -4,6 +4,9 @@
 #detail .detailImg{
     height: 400px;
 }
+#detail .detailImg.book{
+    background: url('/public/bookbg.png')no-repeat 0% 30% / cover;
+}
 
 #detail .detailBox{
     background: #fff;
@@ -64,3 +67,31 @@
 #detail .bookBox .descriptionBox .description{
     line-height: 130%;
 }
+
+/* MEDIA QUERIES mobile */
+@media screen and (max-width: 769px) {
+    #detail .bookBox .leftBox .poster {
+      height: 300px;
+    }
+  
+    #detail .detailBox {
+      transform: translateY(-10%);
+      padding: 20px;
+      width: calc(100% - 40px);
+      background: none;
+      border: none;
+    }
+  
+    #detail .bookBox .detailInnerBox {
+      display: block;
+    }
+  
+    #detail .bookBox .detailInnerBox .leftBox .poster {
+      margin: 0 auto;
+      border: 1px solid #ccc;
+    }
+  
+    #detail .bookBox .detailInnerBox .rightBox {
+      margin: 20px 0;
+    }
+  }

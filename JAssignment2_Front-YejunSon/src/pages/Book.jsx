@@ -26,25 +26,15 @@ export default function Book() {
     return (
         <>
             <main id='detail'>
-                <div className="detailImg"
-                    style={
-                        {
-                            // backgroundImage: `url(${book.thumbnail})`,
-                            backgroundColor: '#aaa',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: '50% 30%',
-                            backgroundSize: 'cover'
-                        }
-                    }
-                ></div>
+                <div className="detailImg book"></div>
                 <div className="detailBox bookBox">
                     <div className="detailInnerBox">
                         <div className="leftBox">
                             <div className="poster"
                                 style={
                                     {
-                                        // backgroundImage: `url(${book.poster})`,
-                                        backgroundColor: '#aaa',
+                                        backgroundImage: `url(${book.poster})`,
+                                        // backgroundColor: '#aaa',
                                         backgroundRepeat: 'no-repeat',
                                         backgroundPosition: '50% 50%',
                                         backgroundSize: 'cover'
