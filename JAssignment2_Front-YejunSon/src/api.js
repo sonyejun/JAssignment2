@@ -1,4 +1,4 @@
-const BASE_URL = 'https://j-assignment2-back.vercel.app/api/';
+const BASE_URL = 'http://localhost:4000/api/';
 
 export async function fetchWithBaseUrl(path, options) {
   const url = `${BASE_URL}${path}`;
